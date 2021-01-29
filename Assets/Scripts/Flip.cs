@@ -4,15 +4,44 @@ using UnityEngine;
 
 public class Flip : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private bool startFlip;
+    [SerializeField]
+    private float speed = 10;
+    [SerializeField]
+    private float turnSpeed = 5;
+    private bool flipping;
+    [SerializeField]
+    private float spinTime = 2;
+    private float timer;
+
+
+    private void FixedUpdate()
     {
-        
+        if (startFlip)
+        {
+            GetComponent<Rigidbody>().AddForce(Vector3.up * speed, ForceMode.VelocityChange);
+
+            flipping = true;
+            timer = spinTime;
+            startFlip = false;
+        }
+
+        if (flipping)
+        {
+            transform.Rotate(Vector3.right * turnSpeed);
+
+            timer -= Time.deltaTime;
+
+            if (timer <= 0)
+            {
+                flipping = false;
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void DoAFlip()
     {
-        
+        startFlip = true;
     }
 }
