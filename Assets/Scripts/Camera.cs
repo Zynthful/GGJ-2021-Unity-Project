@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private float sensitivity = 1;
+
+    private float xMove;
+    private float yMove;
+
+    void FixedUpdate()
     {
-        
+        xMove -= Input.GetAxis("Mouse Y") * sensitivity;
+        yMove += Input.GetAxis("Mouse X") * sensitivity;
+
+        transform.rotation = Quaternion.Euler(xMove, yMove, 0);
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Interact();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Interact()
     {
-        
+        RaycastHit hitInfo;
+
+        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, Mathf.Infinity))
+        {
+            if (hitInfo.transform.GetComponent<Flip>())
+            {
+                hitInfo.transform.GetComponent<Flip>().DoAFlip();
+            }
+        }
     }
 }
