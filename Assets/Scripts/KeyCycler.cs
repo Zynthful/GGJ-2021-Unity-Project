@@ -65,4 +65,9 @@ public class KeyCycler : MonoBehaviour
         }
     }
     */
+
+    public void AddKey(Transform key)
+    {
+        keys.Add(key);
+    }
 }
