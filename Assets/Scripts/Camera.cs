@@ -5,6 +5,8 @@ using UnityEngine;
 public class Camera : MonoBehaviour
 {
     [SerializeField]
+    private Transform whereTheKeyCyclerIs;
+    [SerializeField]
     private float sensitivity = 1;
 
     private float xMove;
@@ -32,6 +34,12 @@ public class Camera : MonoBehaviour
             if (hitInfo.transform.GetComponent<Flip>())
             {
                 hitInfo.transform.GetComponent<Flip>().DoAFlip();
+            }
+
+            if (hitInfo.transform.GetComponent<Key>())
+            {
+                hitInfo.transform.gameObject.SetActive(false);
+                whereTheKeyCyclerIs.GetComponent<KeyCycler>().AddKey(hitInfo.transform);
             }
         }
     }
