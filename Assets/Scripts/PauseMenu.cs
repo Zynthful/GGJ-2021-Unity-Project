@@ -5,12 +5,15 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     private bool paused = false;
-    [SerializeField] private GameObject PausePanel;
+    [SerializeField] private GameObject[] PausePanel;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        foreach(GameObject item in PausePanel)
+        {
+            item.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -31,11 +34,18 @@ public class PauseMenu : MonoBehaviour
 
     private void Pause() 
     {
-        PausePanel.SetActive(true);
+        PausePanel[0].SetActive(true);
+        Time.timeScale = 0;
     }
 
-    private void Unpause() 
+    public void Unpause() 
     {
-        PausePanel.SetActive(false);
+        foreach (GameObject item in PausePanel)
+        {
+            item.SetActive(false);
+        }
+
+        PausePanel[0].SetActive(false);
+        Time.timeScale = 1;
     }
 }
