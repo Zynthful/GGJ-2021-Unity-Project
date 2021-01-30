@@ -48,12 +48,26 @@ public class KeyCycler : MonoBehaviour
         {
             keys.Add(keys[0]);
             keys.RemoveAt(0);
+            SetImages();
         }
         else
         {
             Debug.Log("No other keys to switch to.");
         }
     }
+
+
+    private void SetImages()
+    {
+        for (int i = 0; i < keyPreviews.Length; i++)
+        {
+            if (i < keys.Count)
+            {
+                keyPreviews[i].sprite = keys[i].GetComponent<Key>().getImage();
+            }
+        }      
+    }
+
 
     public Transform GetEquippedKey()
     {
@@ -74,5 +88,6 @@ public class KeyCycler : MonoBehaviour
     public void AddKey(Transform key)
     {
         keys.Add(key);
+        SetImages();
     }
 }
