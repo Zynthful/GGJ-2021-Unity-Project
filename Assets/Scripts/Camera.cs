@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD.Studio;
+using FMODUnity;
 
 public class Camera : MonoBehaviour
 {
@@ -18,15 +20,13 @@ public class Camera : MonoBehaviour
     private float xMove;
     private float yMove;
 
-    void Start()
-    {
-        
-    }
+    // FMOD
+    [EventRef] private string ePickUpKey = "{c9d462fa-1f97-417e-ab0c-55a19477b52d}";
+    [EventRef] private string eUnlockDoor = "{040935d6-dcf6-4a57-9877-08913652e1bb}";
+    [EventRef] private string eLockedDoor = "{ca98f70c-e3db-4e78-9e32-dd7349aefd23}";
 
     void FixedUpdate()
     {
-        print(yMove);
-
         if (!(yMove - Input.GetAxis("Mouse Y") * sensitivity > maxY) && !(yMove - Input.GetAxis("Mouse Y") * sensitivity < minY))
         {
             yMove -= Input.GetAxis("Mouse Y") * sensitivity;
@@ -53,8 +53,6 @@ public class Camera : MonoBehaviour
             if (hitInfo.transform.GetComponent<Flip>())
             {
                 hitInfo.transform.GetComponent<Flip>().DoAFlip();
-
-                //flip noise
             }
 
             else if (hitInfo.transform.GetComponent<Key>())
@@ -62,7 +60,8 @@ public class Camera : MonoBehaviour
                 hitInfo.transform.gameObject.SetActive(false);
                 whereTheKeyCyclerIs.GetComponent<KeyCycler>().AddKey(hitInfo.transform);
 
-                //Pickup key noise
+                // Pickup key SFX
+                RuntimeManager.PlayOneShot(ePickUpKey);
             }
 
             else if (hitInfo.transform.GetComponent<Lock>())
@@ -72,12 +71,16 @@ public class Camera : MonoBehaviour
                 if (currentKey.GetComponent<Key>().GetID() == hitInfo.transform.GetComponent<Lock>().GetID())
                 {
                     hitInfo.transform.GetComponent<Lock>().Unlock();
-                    //unlock noise
+
+                    // Unlock Door SFX
+                    RuntimeManager.PlayOneShot(eUnlockDoor, hitInfo.transform.position);
                 }
 
                 else
                 {
-                    //wrong key noise
+                    Debug.Log("locked");
+                    // Locked Door SFX
+                    RuntimeManager.PlayOneShot(eLockedDoor, hitInfo.transform.position);
                 }
             }
         }

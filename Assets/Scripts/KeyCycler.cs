@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
+using FMOD.Studio;
 
 public class KeyCycler : MonoBehaviour
 {
@@ -16,6 +18,9 @@ public class KeyCycler : MonoBehaviour
     // Inputs
     [SerializeField] [Tooltip("Key used to cycle through each key")]
     private KeyCode cycleKey = KeyCode.Q;
+
+    // FMOD
+    [EventRef] private string eSwitchKey = "{e68de96c-396d-405d-b319-d7e5432f860f}";
 
     private void Start()
     {
@@ -51,6 +56,9 @@ public class KeyCycler : MonoBehaviour
             keys.Add(keys[0]);
             keys.RemoveAt(0);
             SetImages();
+
+            // SwitchKey SFX
+            RuntimeManager.PlayOneShot(eSwitchKey);
         }
         else
         {
