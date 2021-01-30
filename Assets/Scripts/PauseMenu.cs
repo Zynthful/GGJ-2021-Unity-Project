@@ -24,12 +24,12 @@ public class PauseMenu : MonoBehaviour
             ReceivedInput();
         }
 
-        if (Time.timeScale == 0) 
+        if (paused) 
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
-        if (Time.timeScale == 1)
+        if (!paused)
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
@@ -51,16 +51,6 @@ public class PauseMenu : MonoBehaviour
 
     public void Unpause()
     { 
-        paused = false;
-        Time.timeScale = 1;
-        foreach (GameObject panel in PausePanel)
-        {
-            panel.SetActive(false);
-        }
-    }
-
-    public void test() 
-    {
         paused = false;
         Time.timeScale = 1;
         foreach (GameObject panel in PausePanel)
