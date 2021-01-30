@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    private bool paused = false;
+    public static bool paused = false;
     [SerializeField] private GameObject[] PausePanel;
 
     // Start is called before the first frame update
     void Start()
     {
-        foreach(GameObject item in PausePanel)
+        foreach(GameObject panel in PausePanel)
         {
-            item.SetActive(false);
+            panel.SetActive(false);
         }
     }
 
@@ -22,6 +22,17 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) 
         {
             ReceivedInput();
+        }
+
+        if (Time.timeScale == 0) 
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        if (Time.timeScale == 1)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
@@ -38,14 +49,23 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    public void Unpause() 
-    {
-        foreach (GameObject item in PausePanel)
-        {
-            item.SetActive(false);
-        }
-
-        PausePanel[0].SetActive(false);
+    public void Unpause()
+    { 
+        paused = false;
         Time.timeScale = 1;
+        foreach (GameObject panel in PausePanel)
+        {
+            panel.SetActive(false);
+        }
+    }
+
+    public void test() 
+    {
+        paused = false;
+        Time.timeScale = 1;
+        foreach (GameObject panel in PausePanel)
+        {
+            panel.SetActive(false);
+        }
     }
 }
