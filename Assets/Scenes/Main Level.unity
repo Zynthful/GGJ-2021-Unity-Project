@@ -1938,12 +1938,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 25759b4c74950f24f8d618fe5fb076f5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.133
+      value: -3.59
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 25759b4c74950f24f8d618fe5fb076f5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.112
+      value: 1.24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 25759b4c74950f24f8d618fe5fb076f5,
         type: 3}
@@ -2009,8 +2009,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.59734344, y: 0.27668285, z: 0.21703637}
-  m_Center: {x: -1.0821452, y: 1.0213039, z: -0.0071050525}
+  m_Size: {x: 0.6057296, y: 0.26997718, z: 0.22670649}
+  m_Center: {x: 0, y: 0, z: 0.000000007450581}
 --- !u!114 &1528884020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2153,6 +2153,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FLIPABLEBOOKSHELF
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502329953467236114, guid: 33d443a130a88be4e84ddd01ac915eac,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8040922230618757415, guid: 33d443a130a88be4e84ddd01ac915eac,
         type: 3}
@@ -2467,12 +2472,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dac272aade6002e48910bdbbc1a93717,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.364
+      value: -1.328
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dac272aade6002e48910bdbbc1a93717,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.366
+      value: 1.122
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dac272aade6002e48910bdbbc1a93717,
         type: 3}
@@ -2559,8 +2564,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5385084, y: 0.08846688, z: 0.2880274}
-  m_Center: {x: 1.0294027, y: 0.75811785, z: -0.001011163}
+  m_Size: {x: 0.537364, y: 0.070203476, z: 0.28808716}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2090181088
 Rigidbody:
   m_ObjectHideFlags: 0
