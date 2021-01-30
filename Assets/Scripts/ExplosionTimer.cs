@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ExplosionTimer : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class ExplosionTimer : MonoBehaviour
             slider.value = currentTime / timeToExplode;                         // Update slider value
             yield return new WaitForEndOfFrame();
         }
-        Debug.Log("Dead");
+        SceneManager.LoadScene(2);
+        //Debug.Log("Dead");
     }
 }
