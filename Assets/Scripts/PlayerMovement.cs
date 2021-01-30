@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] float L_E_A_N_MULTIPLIER;
 
+    [SerializeField] LayerMask mask;
+
     Rigidbody rb;
 
     float xInput;
@@ -41,7 +43,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        rb.velocity = ((xInput * transform.right)+(yInput * transform.forward)) * moveSpeed;
+        Vector3 newVelocity = ((xInput * transform.right)+(yInput * transform.forward)) * moveSpeed;
+        newVelocity.y = rb.velocity.y;
+        rb.velocity = newVelocity;
     }
 
     void Rotate()
@@ -60,8 +64,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z), Vector3.down, Color.red, 1);
-            if(Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), Vector3.down, 1200.5f, layerMask:default)){rb.AddForce(0, jumpForce, 0);}
+            if(Physics.Raycast(new Vector3(transform.position.x, transform.position.y - (transform.localScale.y/2), transform.position.z), Vector3.down, .5f, mask)){rb.AddForce(0, jumpForce, 0);}
         }
     }
 }
