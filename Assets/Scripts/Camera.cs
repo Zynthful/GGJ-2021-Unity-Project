@@ -12,6 +12,15 @@ public class Camera : MonoBehaviour
     private float xMove;
     private float yMove;
 
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(Cursor.lockState == CursorLockMode.None){Cursor.lockState = CursorLockMode.Locked;}
+            else{Cursor.lockState = CursorLockMode.None;}
+        }
+    }
+
     void FixedUpdate()
     {
         xMove -= Input.GetAxis("Mouse Y") * sensitivity;
