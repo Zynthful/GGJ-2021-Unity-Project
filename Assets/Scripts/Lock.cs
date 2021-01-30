@@ -6,6 +6,8 @@ public class Lock : MonoBehaviour
 {
     [SerializeField]
     private int lockID = 0;
+    [SerializeField]
+    private Transform connectedDoor = null;
 
     public int GetID()
     {
@@ -14,6 +16,7 @@ public class Lock : MonoBehaviour
 
     public void Unlock()
     {
-        print("Unlocked");
+        connectedDoor.GetComponent<Door>().Unlock();
+        gameObject.SetActive(false);
     }
 }
