@@ -9,6 +9,8 @@ public class Camera : MonoBehaviour
     [SerializeField]
     private float sensitivity = 1;
 
+    [SerializeField] GameObject player;
+
     private float xMove;
     private float yMove;
 
@@ -27,6 +29,8 @@ public class Camera : MonoBehaviour
         yMove += Input.GetAxis("Mouse X") * sensitivity;
 
         transform.rotation = Quaternion.Euler(xMove, yMove, 0);
+
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 0.7f, player.transform.position.z + 0.4f);
 
         if (Input.GetKeyDown(KeyCode.F))
         {
