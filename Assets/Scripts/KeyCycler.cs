@@ -55,7 +55,7 @@ public class KeyCycler : MonoBehaviour
         }
     }
 
-    private Transform GetEquippedKey()
+    public Transform GetEquippedKey()
     {
         return keys[0];
     }

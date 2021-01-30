@@ -150,6 +150,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LookingAt Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8843668012292717270, guid: 3e4e78f838348a14987b6eb3ccae1f26,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e4e78f838348a14987b6eb3ccae1f26, type: 3}
 --- !u!224 &8950202136204026346 stripped
@@ -168,27 +173,27 @@ PrefabInstance:
     - target: {fileID: 1347858802405058884, guid: 441cc424e0c4b474e98b836b82988977,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1347858802405058884, guid: 441cc424e0c4b474e98b836b82988977,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1347858802405058884, guid: 441cc424e0c4b474e98b836b82988977,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1347858802405058884, guid: 441cc424e0c4b474e98b836b82988977,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1347858802405058884, guid: 441cc424e0c4b474e98b836b82988977,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1347858804085825415, guid: 441cc424e0c4b474e98b836b82988977,
         type: 3}
@@ -300,15 +305,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: NukeTimer Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 1347858804401797499, guid: 441cc424e0c4b474e98b836b82988977,
+    - target: {fileID: 1347858804085825435, guid: 441cc424e0c4b474e98b836b82988977,
         type: 3}
-      propertyPath: m_AnchorMax.x
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1347858804401797499, guid: 441cc424e0c4b474e98b836b82988977,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347858804401797499, guid: 441cc424e0c4b474e98b836b82988977,
+        type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 441cc424e0c4b474e98b836b82988977, type: 3}
@@ -325,6 +335,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3801381687106888759}
     m_Modifications:
+    - target: {fileID: 3702612987282507105, guid: 55d1892c97603e842bdf2bff6c4bd9c0,
+        type: 3}
+      propertyPath: keys.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3702612987282507114, guid: 55d1892c97603e842bdf2bff6c4bd9c0,
         type: 3}
       propertyPath: m_Name

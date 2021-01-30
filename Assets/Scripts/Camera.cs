@@ -36,10 +36,20 @@ public class Camera : MonoBehaviour
                 hitInfo.transform.GetComponent<Flip>().DoAFlip();
             }
 
-            if (hitInfo.transform.GetComponent<Key>())
+            else if (hitInfo.transform.GetComponent<Key>())
             {
                 hitInfo.transform.gameObject.SetActive(false);
                 whereTheKeyCyclerIs.GetComponent<KeyCycler>().AddKey(hitInfo.transform);
+            }
+
+            else if (hitInfo.transform.GetComponent<Lock>())
+            {
+                Transform currentKey = whereTheKeyCyclerIs.GetComponent<KeyCycler>().GetEquippedKey();
+
+                if (currentKey.GetComponent<Key>().GetID() == hitInfo.transform.GetComponent<Lock>().GetID())
+                {
+                    hitInfo.transform.GetComponent<Lock>().Unlock();
+                }
             }
         }
     }

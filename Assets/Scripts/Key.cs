@@ -9,12 +9,12 @@ public class Key : MonoBehaviour
     [SerializeField]
     private Sprite image = null;
 
-    private int GetID()
+    public int GetID()
     {
         return keyID;
     }
 
-    private Sprite getImage()
+    public Sprite getImage()
     {
         return image;
     }
