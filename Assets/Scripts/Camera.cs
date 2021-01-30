@@ -14,6 +14,11 @@ public class Camera : MonoBehaviour
     private float xMove;
     private float yMove;
 
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
