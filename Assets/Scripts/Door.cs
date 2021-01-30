@@ -14,7 +14,7 @@ public class Door : MonoBehaviour
 
     public void Unlock()
     {
-        GetComponent<Rigidbody>().constraints &= ~RigidbodyConstraints.FreezeRotationY;
+        GetComponent<Rigidbody>().isKinematic = false;
 
         GetComponent<Rigidbody>().AddTorque(transform.up * swingForce, ForceMode.VelocityChange);
     }
