@@ -327,6 +327,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whereTheKeyCyclerIs: {fileID: 307216811}
   sensitivity: 3
+  maxY: 50
+  minY: -50
   player: {fileID: 1232082827}
 --- !u!1 &805298304
 GameObject:

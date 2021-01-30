@@ -8,6 +8,10 @@ public class Camera : MonoBehaviour
     private Transform whereTheKeyCyclerIs;
     [SerializeField]
     private float sensitivity = 1;
+    [SerializeField]
+    private float maxY = 50;
+    [SerializeField]
+    private float minY = -50;
 
     [SerializeField] GameObject player;
 
@@ -19,17 +23,18 @@ public class Camera : MonoBehaviour
         
     }
 
-    void Update()
-    {
-        
-    }
-
     void FixedUpdate()
     {
-        xMove -= Input.GetAxis("Mouse Y") * sensitivity;
-        yMove += Input.GetAxis("Mouse X") * sensitivity;
+        print(yMove);
 
-        transform.rotation = Quaternion.Euler(xMove, yMove, 0);
+        if (!(yMove - Input.GetAxis("Mouse Y") * sensitivity > maxY) && !(yMove - Input.GetAxis("Mouse Y") * sensitivity < minY))
+        {
+            yMove -= Input.GetAxis("Mouse Y") * sensitivity;
+        }
+        
+        xMove += Input.GetAxis("Mouse X") * sensitivity;
+
+        transform.rotation = Quaternion.Euler(yMove, xMove, 0);
 
         transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 0.7f, player.transform.position.z + 0.4f);
 
@@ -48,12 +53,16 @@ public class Camera : MonoBehaviour
             if (hitInfo.transform.GetComponent<Flip>())
             {
                 hitInfo.transform.GetComponent<Flip>().DoAFlip();
+
+                //flip noise
             }
 
             else if (hitInfo.transform.GetComponent<Key>())
             {
                 hitInfo.transform.gameObject.SetActive(false);
                 whereTheKeyCyclerIs.GetComponent<KeyCycler>().AddKey(hitInfo.transform);
+
+                //Pickup key noise
             }
 
             else if (hitInfo.transform.GetComponent<Lock>())
@@ -63,6 +72,12 @@ public class Camera : MonoBehaviour
                 if (currentKey.GetComponent<Key>().GetID() == hitInfo.transform.GetComponent<Lock>().GetID())
                 {
                     hitInfo.transform.GetComponent<Lock>().Unlock();
+                    //unlock noise
+                }
+
+                else
+                {
+                    //wrong key noise
                 }
             }
         }

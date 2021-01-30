@@ -98,4 +98,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whereTheKeyCyclerIs: {fileID: 0}
   sensitivity: 6
+  maxY: 50
+  minY: -50
   player: {fileID: 0}
