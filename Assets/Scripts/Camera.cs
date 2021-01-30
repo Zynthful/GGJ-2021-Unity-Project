@@ -16,16 +16,12 @@ public class Camera : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(Cursor.lockState == CursorLockMode.None){Cursor.lockState = CursorLockMode.Locked;}
-            else{Cursor.lockState = CursorLockMode.None;}
-        }
+        
     }
 
     void FixedUpdate()
