@@ -52,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
 
             camera.transform.rotation = Quaternion.Lerp(camera.transform.rotation, Quaternion.Euler(rotationValues.z, camera.transform.eulerAngles.y, -rotationValues.x), 0.1f);
         }
+
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, camera.transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
     }
     
     void Jump()
@@ -59,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             Debug.DrawRay(new Vector3(transform.position.x, transform.position.y - (transform.localScale.y/2), transform.position.z), Vector3.down, Color.red, 1);
-            if(Physics.Raycast(new Vector3(transform.position.x, transform.position.y - (transform.localScale.y/2), transform.position.z), Vector3.down, 0.5f, layerMask:default)){rb.AddForce(0, jumpForce, 0);}
+            if(Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), Vector3.down, 1200.5f, layerMask:default)){rb.AddForce(0, jumpForce, 0);}
         }
     }
 }
