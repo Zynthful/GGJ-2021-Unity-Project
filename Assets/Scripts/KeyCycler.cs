@@ -27,6 +27,8 @@ public class KeyCycler : MonoBehaviour
         {
             keyPreviews[i] = keyPreviewsParent.GetChild(i).GetComponent<Image>();
         }
+
+        SetImages();
     }
 
     private void Update()
@@ -63,7 +65,7 @@ public class KeyCycler : MonoBehaviour
         {
             if (i < keys.Count)
             {
-                keyPreviews[i].sprite = keys[i].GetComponent<Key>().getImage();
+                keyPreviews[i].color = keys[i].GetComponent<Key>().getColour();
             }
         }      
     }

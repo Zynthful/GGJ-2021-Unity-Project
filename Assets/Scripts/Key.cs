@@ -7,15 +7,22 @@ public class Key : MonoBehaviour
     [SerializeField]
     private int keyID = 0;
     [SerializeField]
-    private Sprite image = null;
+    private Color colour = Color.red;
+
+
+    private void Start()
+    {
+        GetComponent<MeshRenderer>().materials[1].color = colour;
+    }
+
 
     public int GetID()
     {
         return keyID;
     }
 
-    public Sprite getImage()
+    public Color getColour()
     {
-        return image;
+        return colour;
     }
 }
