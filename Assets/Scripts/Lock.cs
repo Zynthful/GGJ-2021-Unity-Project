@@ -8,6 +8,14 @@ public class Lock : MonoBehaviour
     private int lockID = 0;
     [SerializeField]
     private Transform connectedDoor = null;
+    [SerializeField]
+    private Color colour = Color.red;
+
+
+    private void Start()
+    {
+        GetComponent<MeshRenderer>().materials[1].color = colour;
+    }
 
     public int GetID()
     {
