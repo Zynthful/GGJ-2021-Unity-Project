@@ -1732,6 +1732,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7177213363059773772}
     m_Modifications:
+    - target: {fileID: 855214358931485055, guid: 88f685343dec5d04baa470da41d69a21,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 855214359082306670, guid: 88f685343dec5d04baa470da41d69a21,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 855214359440453816, guid: 88f685343dec5d04baa470da41d69a21,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1842,11 +1852,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Options (Left)
       objectReference: {fileID: 0}
+    - target: {fileID: 855214359440453817, guid: 88f685343dec5d04baa470da41d69a21,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 855214359448616098, guid: 88f685343dec5d04baa470da41d69a21,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7177213361919388170}
+    - target: {fileID: 855214359596262434, guid: 88f685343dec5d04baa470da41d69a21,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 855214359870648376, guid: 88f685343dec5d04baa470da41d69a21,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 855214359948619544, guid: 88f685343dec5d04baa470da41d69a21,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 855214359982269981, guid: 88f685343dec5d04baa470da41d69a21,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 855214360105681546, guid: 88f685343dec5d04baa470da41d69a21,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 855214360176958042, guid: 88f685343dec5d04baa470da41d69a21,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 855214360307350206, guid: 88f685343dec5d04baa470da41d69a21,
         type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
