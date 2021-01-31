@@ -14,6 +14,8 @@ public class Camera : MonoBehaviour
     private float maxY = 50;
     [SerializeField]
     private float minY = -50;
+    [SerializeField]
+    private float maxCast = 10;
 
     [SerializeField] GameObject player;
 
@@ -48,7 +50,7 @@ public class Camera : MonoBehaviour
     {
         RaycastHit hitInfo;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, Mathf.Infinity))
+        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, maxCast))
         {
             if (hitInfo.transform.GetComponent<Flip>())
             {

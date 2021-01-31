@@ -329,6 +329,7 @@ MonoBehaviour:
   sensitivity: 3
   maxY: 50
   minY: -50
+  maxCast: 100
   player: {fileID: 1232082827}
 --- !u!1 &805298304
 GameObject:
