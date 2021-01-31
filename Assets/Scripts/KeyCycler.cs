@@ -81,7 +81,15 @@ public class KeyCycler : MonoBehaviour
 
     public Transform GetEquippedKey()
     {
-        return keys[0];
+        if (keys.Count > 0)
+        {
+            return keys[0];
+        }
+
+        else
+        {
+            return null;
+        }
     }
 
     /*

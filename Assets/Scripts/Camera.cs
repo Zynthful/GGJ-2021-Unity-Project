@@ -70,7 +70,7 @@ public class Camera : MonoBehaviour
             {
                 Transform currentKey = whereTheKeyCyclerIs.GetComponent<KeyCycler>().GetEquippedKey();
 
-                if (currentKey.GetComponent<Key>().GetID() == hitInfo.transform.GetComponent<Lock>().GetID())
+                if (currentKey != null && currentKey.GetComponent<Key>().GetID() == hitInfo.transform.GetComponent<Lock>().GetID())
                 {
                     hitInfo.transform.GetComponent<Lock>().Unlock();
 
