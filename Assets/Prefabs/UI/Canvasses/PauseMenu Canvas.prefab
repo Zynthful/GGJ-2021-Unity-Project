@@ -980,8 +980,9 @@ GameObject:
   m_Component:
   - component: {fileID: 123955292526351680}
   - component: {fileID: 123955292526351681}
+  - component: {fileID: 4891193036895653080}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: S_SFXVol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1058,7 +1059,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4891193036895653080}
+        m_MethodName: SetVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4891193036895653080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123955292526351683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dcdc05cc8eecf746ae6444ba384b766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOfVCA: SFX
 --- !u!1 &123955292533530831
 GameObject:
   m_ObjectHideFlags: 0
@@ -2764,7 +2789,7 @@ RectTransform:
   m_Children:
   - {fileID: 123955293067197042}
   m_Father: {fileID: 123955293073782377}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4221,6 +4246,9 @@ Transform:
   m_Children:
   - {fileID: 123955293326935507}
   - {fileID: 123955292970394108}
+  - {fileID: 123955293680528311}
+  - {fileID: 123955294121737915}
+  - {fileID: 123955293149888899}
   m_Father: {fileID: 123955293073782377}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4619,9 +4647,6 @@ RectTransform:
   - {fileID: 123955292520758389}
   - {fileID: 123955292352441061}
   - {fileID: 123955293053526308}
-  - {fileID: 123955293680528311}
-  - {fileID: 123955294121737915}
-  - {fileID: 123955293149888899}
   - {fileID: 123955292881286694}
   m_Father: {fileID: 123955292499108015}
   m_RootOrder: 3
@@ -5145,7 +5170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 123955293149888899}
   m_Layer: 0
-  m_Name: Sliders (3)
+  m_Name: MusicVol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5159,13 +5184,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123955293149888898}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -284, y: -194, z: -164.92308}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalPosition: {x: 0.75, y: -36.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 123955292886840898}
   - {fileID: 123955292717233733}
-  m_Father: {fileID: 123955293073782377}
-  m_RootOrder: 5
+  m_Father: {fileID: 123955293053526308}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &123955293216605352
 GameObject:
@@ -7171,7 +7196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &123955293637401582
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7396,7 +7421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 123955293680528311}
   m_Layer: 0
-  m_Name: Sliders (1)
+  m_Name: MasterVol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7410,13 +7435,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123955293680528310}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 449, y: 168, z: -164.92308}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalPosition: {x: 92.37501, y: 8.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 123955293506244465}
   - {fileID: 123955294152823634}
-  m_Father: {fileID: 123955293073782377}
-  m_RootOrder: 3
+  m_Father: {fileID: 123955293053526308}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &123955293696836643
 GameObject:
@@ -7586,8 +7611,9 @@ GameObject:
   m_Component:
   - component: {fileID: 123955293714728980}
   - component: {fileID: 123955293714728981}
+  - component: {fileID: 8186955438953214571}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: S_MusicVol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7664,7 +7690,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8186955438953214571}
+        m_MethodName: SetVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8186955438953214571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123955293714728983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dcdc05cc8eecf746ae6444ba384b766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOfVCA: Music
 --- !u!1 &123955293736486812
 GameObject:
   m_ObjectHideFlags: 0
@@ -9100,8 +9150,9 @@ GameObject:
   m_Component:
   - component: {fileID: 123955293973504513}
   - component: {fileID: 123955293973504518}
+  - component: {fileID: 9219242045892329664}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: S_MasterVol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9178,7 +9229,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9219242045892329664}
+        m_MethodName: SetVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &9219242045892329664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123955293973504512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dcdc05cc8eecf746ae6444ba384b766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOfVCA: Master
 --- !u!1 &123955293974542431
 GameObject:
   m_ObjectHideFlags: 0
@@ -9561,7 +9636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 123955294121737915}
   m_Layer: 0
-  m_Name: Sliders (2)
+  m_Name: SFXVol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9575,13 +9650,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123955294121737914}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 487, y: -242, z: -164.92308}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalPosition: {x: 97.12501, y: -42.750004, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 123955294305909087}
   - {fileID: 123955293097594580}
-  m_Father: {fileID: 123955293073782377}
-  m_RootOrder: 4
+  m_Father: {fileID: 123955293053526308}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &123955294127921008
 GameObject:
