@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /*
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.U))
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(3);
         }
     }
+    */
 
     public float endTime;
 }

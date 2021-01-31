@@ -33,7 +33,8 @@ public class ExplosionTimer : MonoBehaviour
         float currentTime = timeToExplode;
         while (currentTime > 0)
         {
-            currentTime -= Time.deltaTime; GameManager.instance.endTime = currentTime;
+            currentTime -= Time.deltaTime;
+            GameManager.instance.endTime = currentTime;
             //timeLeftText.text = $"{Mathf.CeilToInt(currentTime)}";   // Update text
             slider.value = currentTime / timeToExplode;                         // Update slider value
             yield return new WaitForEndOfFrame();
