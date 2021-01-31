@@ -12,6 +12,7 @@ public class FridgeOpen : MonoBehaviour
     private float speed = -1;
 
     [SerializeField] GameObject endAnim;
+    [SerializeField] GameObject oldFridge;
 
 
     void Update()
@@ -23,8 +24,10 @@ public class FridgeOpen : MonoBehaviour
             if (transform.rotation.eulerAngles.y < maxAngle)
             {
                 GameObject.FindGameObjectWithTag("MainCamera").SetActive(false);
+                oldFridge.SetActive(false);
                 GameObject.FindGameObjectWithTag("Player").SetActive(false);
                 endAnim.SetActive(true);
+                DestroyImmediate(this);
             }
         }      
     }

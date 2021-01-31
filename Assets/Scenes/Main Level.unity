@@ -13973,6 +13973,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1723946419}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1724628927 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7276959167227657110, guid: 31321d1c6a5d0d94d9938be4ee960839,
+    type: 3}
+  m_PrefabInstance: {fileID: 2108176262}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1727003851
 GameObject:
   m_ObjectHideFlags: 0
@@ -17156,6 +17162,11 @@ PrefabInstance:
       propertyPath: endAnim
       value: 
       objectReference: {fileID: 1988424762}
+    - target: {fileID: 7276959167857750690, guid: 31321d1c6a5d0d94d9938be4ee960839,
+        type: 3}
+      propertyPath: oldFridge
+      value: 
+      objectReference: {fileID: 1724628927}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31321d1c6a5d0d94d9938be4ee960839, type: 3}
 --- !u!1001 &2125092562
