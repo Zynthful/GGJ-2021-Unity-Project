@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -25,15 +26,14 @@ public class PauseMenu : MonoBehaviour
         {
             ReceivedInput();
         }
+        Cursor.visible = paused;
 
         if (paused) 
         {
             Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
         }
         if (!paused)
         {
-            Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
@@ -41,6 +41,7 @@ public class PauseMenu : MonoBehaviour
     private void ReceivedInput() 
     {
         paused = !paused;
+        RuntimeManager.GetBus("bus:/").setPaused(paused); // Pauses/unpauses audio
         if (paused) Pause();
         else Unpause();
     }
@@ -52,8 +53,9 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Unpause()
-    { 
+    {
         paused = false;
+        RuntimeManager.GetBus("bus:/").setPaused(false);
         Time.timeScale = 1;
         foreach (GameObject panel in PausePanel)
         {
