@@ -47,7 +47,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Pause() 
     {
-        PausePanel[0].SetActive(true);
+        PausePanel[1].SetActive(true);
         Time.timeScale = 0;
     }
 
