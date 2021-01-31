@@ -10,6 +10,9 @@ public class AnimEndCheck : MonoBehaviour
     {
         if(animationEnd)
         {
+            // Unlock cursor
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene(3);
         }
     }

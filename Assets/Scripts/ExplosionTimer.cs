@@ -38,7 +38,11 @@ public class ExplosionTimer : MonoBehaviour
             slider.value = currentTime / timeToExplode;                         // Update slider value
             yield return new WaitForEndOfFrame();
         }
-        SceneManager.LoadScene(2);
-        //Debug.Log("Dead");
+
+        // Unlock cursor
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        SceneManager.LoadScene(2); // Game Over screen
     }
 }
