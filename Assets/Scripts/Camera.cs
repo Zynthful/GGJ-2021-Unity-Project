@@ -38,7 +38,7 @@ public class Camera : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(yMove, xMove, 0);
 
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 0.7f, player.transform.position.z);
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 0.7f, player.transform.position.z - 0.2f);
 
         if (Input.GetKeyDown(KeyCode.F))
         {
