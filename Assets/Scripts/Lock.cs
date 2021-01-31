@@ -14,7 +14,7 @@ public class Lock : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<MeshRenderer>().materials[1].color = colour;
+        GetComponent<MeshRenderer>().materials[0].color = colour;
     }
 
     public int GetID()
@@ -25,6 +25,11 @@ public class Lock : MonoBehaviour
     public void Unlock()
     {
         connectedDoor.GetComponent<Door>().Unlock();
-        gameObject.SetActive(false);
+
+        for (int i = 0; i < 2; i++)
+        {
+            transform.parent.GetChild(0).gameObject.AddComponent<Rigidbody>();
+            transform.parent.GetChild(0).parent = null;
+        }
     }
 }
