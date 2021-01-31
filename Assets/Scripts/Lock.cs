@@ -38,10 +38,12 @@ public class Lock : MonoBehaviour
             connectedDoor.GetComponent<Door>().Unlock();            
         }
 
-        for (int i = 0; i < 2; i++)
+        transform.parent.gameObject.SetActive(false);
+
+        /*for (int i = 0; i < 2; i++)
         {
             transform.parent.GetChild(0).gameObject.AddComponent<Rigidbody>();
             transform.parent.GetChild(0).parent = null;
-        }
+        }*/
     }
 }
