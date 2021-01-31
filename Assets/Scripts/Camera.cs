@@ -44,6 +44,9 @@ public class Camera : MonoBehaviour
         {
             Interact();
         }
+
+        // i know it's not efficient don't @ me
+        sensitivity = PlayerPrefs.GetFloat("Mouse Sensitivity", 3);
     }
 
     private void Interact()
