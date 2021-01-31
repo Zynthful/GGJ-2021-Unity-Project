@@ -31,14 +31,14 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         xInput = Input.GetAxisRaw("Horizontal");
-        yInput = Input.GetAxisRaw("Vertical");
-        Jump();
+        yInput = Input.GetAxisRaw("Vertical");       
     }
 
     void FixedUpdate()
     {
         Move();
         Rotate();
+        Jump();
     }
 
     void Move()
@@ -62,9 +62,12 @@ public class PlayerMovement : MonoBehaviour
     
     void Jump()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space))
         {
-            if(Physics.Raycast(new Vector3(transform.position.x, transform.position.y - (transform.localScale.y/2), transform.position.z), Vector3.down, .5f, mask)){rb.AddForce(0, jumpForce, 0);}
+            if(Physics.Raycast(new Vector3(transform.position.x, transform.position.y - (transform.localScale.y/2), transform.position.z), Vector3.down, .5f, mask))
+            {
+                rb.AddForce(new Vector3(rb.velocity.x, jumpForce, rb.velocity.y), ForceMode.VelocityChange);
+            }
         }
     }
 }
